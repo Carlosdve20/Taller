@@ -1,5 +1,3 @@
-
-
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,10 +8,18 @@ public class App {
     public static void main(String[] args) {
 
 
+
         Scanner sc = new Scanner(System.in);
 
-        List<Clientes> clientes = new ArrayList<>();
+  
+        Connection conexion = ConexionDB.conectar();
+        if (conexion != null) {
+            System.out.println("Conexión establecida correctamente.");
+        } else {
+            System.out.println("No se pudo establecer la conexión.");
+        }
 
+     
         int opcion;
 
         do {
@@ -33,11 +39,10 @@ public class App {
 
             switch (opcion) {
                 case 1:
-                    registraClientes(sc );
+                    registraClientes(sc, clientes);
                     break;
                 case 2:
-                    registrarVehículo(sc);
-    
+                    System.out.println("Registrando Vehículo...");
                     break;
                 case 3:
                     System.out.println("Registrando Reparación...");
@@ -68,6 +73,7 @@ public class App {
                     System.out.println("⚠️ Opción no válida.");
             }
         } while (opcion != 9);
+
 
         sc.close();
     }
@@ -110,6 +116,14 @@ public class App {
 
         }
 
+    
+
+
+
+      
+    
+
+  
     
 
 
