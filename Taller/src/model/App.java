@@ -1,5 +1,3 @@
-
-
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,8 +9,6 @@ public class App {
 
 
         Scanner sc = new Scanner(System.in);
-
-        List<Clientes> clientes = new ArrayList<>();
 
         int opcion;
 
@@ -33,11 +29,10 @@ public class App {
 
             switch (opcion) {
                 case 1:
-                    registraClientes(sc );
+                    registraClientes(sc);
                     break;
                 case 2:
-                    registrarVehículo(sc);
-    
+                   registrarVehículo(sc);
                     break;
                 case 3:
                     System.out.println("Registrando Reparación...");
@@ -71,6 +66,7 @@ public class App {
 
         sc.close();
     }
+
 
 
     private static void registrarVehículo(Scanner sc) {
@@ -108,7 +104,7 @@ public class App {
            clienteDAO.agregarCliente(cliente);
     }
 
-        }
+}
 
     
 
