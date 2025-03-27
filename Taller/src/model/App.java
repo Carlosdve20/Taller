@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        List<Clientes>clientes= new ArrayList();
+        
         int opcion;
         do {
             System.out.println("Gestión de Taller, elige lo que necesitas: ");
@@ -25,10 +25,11 @@ public class App {
 
             switch (opcion) {
                 case 1:
-                    registraClientes(sc, clientes);
+                    registraClientes(sc );
                     break;
                 case 2:
-                    System.out.println("Registrando Vehículo...");
+                    registrarVehículo(sc);
+    
                     break;
                 case 3:
                     System.out.println("Registrando Reparación...");
@@ -64,7 +65,25 @@ public class App {
         
             }
 
-    private static void registraClientes(Scanner sc, List<Clientes> clientes) {
+    private static void registrarVehículo(Scanner sc) {
+        System.out.println("Escribe la matrícula del vehículo");
+        String matricula = sc.nextLine();
+            
+   
+        System.out.println("Escribe la marca del vehículo");
+        String marca = sc.nextLine();
+   
+        System.out.println("Escribe el modelo del vehículo");
+        String modelo = sc.nextLine();
+   
+        System.out.println("Escribe el tipo de vehículo");
+        String tipo = sc.nextLine();
+   
+       Vehiculos vehiculo= new Vehiculos(matricula, marca, modelo, tipo);
+       clienteDAO.agregarCliente(cliente);
+    }
+
+    private static void registraClientes(Scanner sc) {
         System.out.println("Escribe DNI cliente");
            String dni=sc.nextLine();
            System.out.println("Escribe nombre cliente");
@@ -77,6 +96,7 @@ public class App {
            String correo=sc.nextLine();
            System.out.println("Escribe direccion");
            String direccion=sc.nextLine();
-           clientes.add(new Clientes(dni, nombre, apellido,telefono, correo, direccion));
+           Clientes cliente =new Clientes(dni, nombre, apellido,telefono, correo, direccion);
     }
+
         }
