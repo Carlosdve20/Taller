@@ -11,8 +11,4 @@ private String tipo;
         this.tipo = tipo;
     }
 
-    Vehiculos() {
-        throw new UnsupportedOperationException("Not supported yet.");
     }
-
-}
