@@ -1,5 +1,3 @@
-
-
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
@@ -76,7 +74,7 @@ public class App {
     }
 
     private static void registraClientes(Scanner sc, List<Clientes> clientes) {
-        System.out.println("\nEscribe DNI del cliente:");
+        System.out.println("nEscribe DNI del cliente:");
         String dni = sc.nextLine();
         System.out.println("Escribe nombre del cliente:");
         String nombre = sc.nextLine();
