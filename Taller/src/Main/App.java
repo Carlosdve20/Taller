@@ -1,15 +1,31 @@
-package Main;
+
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import dao.ClienteDAO;
+import model.Vehiculos;
 import model.Clientes;
 
 public class App {
     public static void main(String[] args) {
 
 
+
         Scanner sc = new Scanner(System.in);
+        List<Clientes>clientes= new ArrayList();
+        List<Vehiculos>vehiculos=new ArrayList();
+
+
+  
+        Connection conexion = ConexionDB.conectar();
+        if (conexion != null) {
+            System.out.println("Conexión establecida correctamente.");
+        } else {
+            System.out.println("No se pudo establecer la conexión.");
+        }
+
+     
 
         int opcion;
 
@@ -30,11 +46,14 @@ public class App {
 
             switch (opcion) {
                 case 1:
-                    registraClientes(sc);
+
+                registraClientes(clientes, sc);
                     break;
                 case 2:
-                   registrarVehículo(sc);
+                registrarVehiculo(vehiculos, sc);
+
                     break;
+               
                 case 3:
                     System.out.println("Registrando Reparación...");
                     break;
@@ -65,12 +84,13 @@ public class App {
             }
         } while (opcion != 9);
 
+
         sc.close();
     }
 
 
 
-    private static void registrarVehículo(Scanner sc) {
+    private static void registrarVehiculo(List<Vehiculos> vehiculos, Scanner sc) {
         System.out.println("Escribe la matrícula del vehículo");
         String matricula = sc.nextLine();
             
@@ -84,11 +104,12 @@ public class App {
         System.out.println("Escribe el tipo de vehículo");
         String tipo = sc.nextLine();
    
-       Vehiculos vehiculo= new Vehiculos(matricula, marca, modelo, tipo);
-       
+       Vehiculos vehiculo= new Vehiculos(matricula, marca, modelo, tipo); 
+       vehiculos.add(vehiculo);
     }
 
-    private static void registraClientes(Scanner sc) {
+    
+        private static void registraClientes(List<Clientes>clientes,Scanner sc ) {
         System.out.println("Escribe DNI cliente");
            String dni=sc.nextLine();
            System.out.println("Escribe nombre cliente");
@@ -102,11 +123,23 @@ public class App {
            System.out.println("Escribe direccion");
            String direccion=sc.nextLine();
            Clientes cliente =new Clientes(dni, nombre, apellido,telefono, correo, direccion);
-           clienteDAO.agregarCliente(cliente);
+           clientes.add(cliente);
+           //clienteDAO.agregarCliente(cliente);//
+           ClienteDAO clienteDAO =new ClienteDAO();
+           clienteDAO.insertarClientes(clientes);
     }
+
 
 }
 
+    
+
+
+
+      
+    
+
+  
     
 
 

@@ -24,6 +24,77 @@ public Reparacion(int numeropedido, Vehiculos vehiculo, Clientes cliente, List<S
     this.estado = estado;
 }
 
+    public int getNumeropedido() {
+        return numeropedido;
+    }
+
+    public void setNumeropedido(int numeropedido) {
+        this.numeropedido = numeropedido;
+    }
+
+    public Vehiculos getVehiculo() {
+        return vehiculo;
+    }
+
+    public void setVehiculo(Vehiculos vehiculo) {
+        this.vehiculo = vehiculo;
+    }
+
+    public Clientes getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Clientes cliente) {
+        this.cliente = cliente;
+    }
+
+    public List<Servicios> getServicios() {
+        return servicios;
+    }
+
+    public void setServicios(List<Servicios> servicios) {
+        this.servicios = servicios;
+    }
+
+    public Empleado getEmpleado() {
+        return empleado;
+    }
+
+    public void setEmpleado(Empleado empleado) {
+        this.empleado = empleado;
+    }
+
+    public LocalDate getFechaEntradaVehiculo() {
+        return fechaEntradaVehiculo;
+    }
+
+    public void setFechaEntradaVehiculo(LocalDate fechaEntradaVehiculo) {
+        this.fechaEntradaVehiculo = fechaEntradaVehiculo;
+    }
+
+    public LocalDate getFechaSalidaVehiculo() {
+        return fechaSalidaVehiculo;
+    }
+
+    public void setFechaSalidaVehiculo(LocalDate fechaSalidaVehiculo) {
+        this.fechaSalidaVehiculo = fechaSalidaVehiculo;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public String getComentario() {
+        return comentario;
+    }
+
+    public void setComentario(String comentario) {
+        this.comentario = comentario;
+    }
 
 
 
