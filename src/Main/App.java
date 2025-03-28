@@ -55,7 +55,7 @@ public class App {
                     break;
                
                 case 3:
-                    System.out.println("Registrando Reparación...");
+                   
                     break;
                 case 4:
                     System.out.println("Registrando Empleado...");
@@ -124,9 +124,9 @@ public class App {
            String direccion=sc.nextLine();
            Clientes cliente =new Clientes(dni, nombre, apellido,telefono, correo, direccion);
            clientes.add(cliente);
-           //clienteDAO.agregarCliente(cliente);//
-           ClienteDAO clienteDAO =new ClienteDAO();
-           clienteDAO.insertarClientes(clientes);
+           /*clienteDAO.agregarCliente(cliente);
+          ClienteDAO clienteDAO =new ClienteDAO();
+           clienteDAO.insertarClientes(clientes);*/
     }
 
 
