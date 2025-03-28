@@ -1,9 +1,9 @@
-
+package Main;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import dao.ClienteDAO;
+
 import model.Vehiculos;
 import model.Clientes;
 
@@ -51,11 +51,14 @@ public class App {
                     break;
                 case 2:
                 registrarVehiculo(vehiculos, sc);
-
+                  
                     break;
                
                 case 3:
-                   
+                   System.out.println("Introduce matricula vehiculo");
+                   for (Vehiculos vehiculo1: vehiculos){
+                    
+                   }
                     break;
                 case 4:
                     System.out.println("Registrando Empleado...");

@@ -1,21 +1,24 @@
+package model;
+
+
 public class Vehiculos {
-private String matricula;
-private String marca;
-private String modelo;
-private String tipo;
+    private String matricula;
+    private String marca;
+    private String modelo;
+    private String tipo;
 
 
 
-public Vehiculos() {
-}
+    public Vehiculos() {
+    }
 
 
-public Vehiculos(String matricula, String marca, String modelo, String tipo) {
-    this.matricula = matricula;
-    this.marca = marca;
-    this.modelo = modelo;
-    this.tipo = tipo;
-}
+    public Vehiculos(String matricula, String marca, String modelo, String tipo) {
+        this.matricula = matricula;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.tipo = tipo;
+    }
 
     public String getMatricula() {
         return matricula;
