@@ -1,10 +1,11 @@
     import java.sql.Connection;
     import java.sql.PreparedStatement;
     import java.sql.SQLException;
+    import model.cliente;
 
-    
     public class ClienteDAO {
         public void agregarCliente(Cliente cliente) {
+            
             String sql = "INSERT INTO clientes (dni, nombre, telefono, email) VALUES (?, ?, ?, ?)";
     
             try (Connection conn = ConexionBD.conectar();

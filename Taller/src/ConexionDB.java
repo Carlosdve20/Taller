@@ -5,8 +5,8 @@ import java.sql.SQLException;
  
 public class ConexionDB {
     private static final String URL = "jdbc:mysql://localhost:3306/Taller";
-    private static final String USUARIO = "Programacion";
-    private static final String CONTRASEÑA = "CONTRASENA";
+    private static final String USUARIO = "carlos";
+    private static final String CONTRASEÑA = "Carlos1996";
  
     public static Connection conectar() {
         try {

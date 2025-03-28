@@ -1,27 +1,40 @@
 import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.Scanner;
-
 
 public class App {
     public static void main(String[] args) {
-
-        
         Scanner sc = new Scanner(System.in);
 
-        
-        
-        Connection conexion = ConexionDB.conectar();
-        if (conexion != null) {
-            System.out.println("Conexión establecida correctamente.");
-        } else {
-            System.out.println("No se pudo establecer la conexión.");
+        // Cargar el controlador JDBC de MySQL
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            System.out.println("Error al cargar el controlador JDBC: " + e.getMessage());
+            e.printStackTrace();
+            return; // Terminar la ejecución si no se puede cargar el controlador
         }
 
+        // Datos de conexión
+        String url = "jdbc:mysql://localhost:3306/Taller?useSSL=false&serverTimezone=UTC";
+        String usuario = "tu_usuario";
+        String contraseña = "tu_contraseña";
+
+        // Establecer la conexión
+        try (Connection conexion = DriverManager.getConnection(url, usuario, contraseña)) {
+            System.out.println("Conexión exitosa a la base de datos.");
+            // Aquí puedes continuar con las operaciones en la base de datos
+        } catch (SQLException e) {
+            System.out.println("Error al conectar a la base de datos: " + e.getMessage());
+            e.printStackTrace();
+        }
+    
      
         int opcion;
 
         do {
-            System.out.println("\nGestión de Taller, elige lo que necesitas: ");
+            System.out.println("Gestión de Taller, elige lo que necesitas: ");
             System.out.println("1. Registrar una Reparación");
             System.out.println("2. Registrar un Empleado");
             System.out.println("3. Revisar Inventario");
@@ -71,15 +84,3 @@ public class App {
 
 
         }
-
-    
-
-
-
-      
-    
-
-  
-    
-
-
