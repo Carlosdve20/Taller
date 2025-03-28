@@ -3,7 +3,7 @@
     import java.sql.SQLException;
     
     public class ClienteDAO {
-        public void agregarCliente(Cligitente cliente) {
+        public void agregarCliente(Cliente cliente) {
             String sql = "INSERT INTO clientes (dni, nombre, telefono, email) VALUES (?, ?, ?, ?)";
     
             try (Connection conn = ConexionBD.conectar();

@@ -7,11 +7,11 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
 
-
-
+        
         Scanner sc = new Scanner(System.in);
 
-  
+        
+        
         Connection conexion = ConexionDB.conectar();
         if (conexion != null) {
             System.out.println("Conexión establecida correctamente.");
@@ -39,7 +39,7 @@ public class App {
 
             switch (opcion) {
                 case 1:
-                    registraClientes(sc, clientes);
+                    registraClientes(sc, Clientes);
                     break;
                 case 2:
                     System.out.println("Registrando Vehículo...");
@@ -70,7 +70,7 @@ public class App {
                     System.out.println("Saliendo del sistema...");
                     break;
                 default:
-                    System.out.println("⚠️ Opción no válida.");
+                    System.out.println(" Opción no válida.");
             }
         } while (opcion != 9);
 
